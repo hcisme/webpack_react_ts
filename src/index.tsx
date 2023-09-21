@@ -1,16 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import TSX from '@/pages/tsx';
-import JSX from '@/pages/jsx';
-import image from './favicon.png';
+import { sum } from './utils';
 
 const root = createRoot(document.getElementById('app'));
-root.render(
-  <>
-    <JSX />
-    <TSX />
-    <img
-      src={image}
-      alt=""
-    />
-  </>
-);
+root.render(<h1>{sum(1, 2)}</h1>);
