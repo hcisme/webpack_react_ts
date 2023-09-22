@@ -3,7 +3,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -13,16 +12,17 @@ const config = {
   entry: './src/index',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name]-[chunkhash:5].js',
-    publicPath: '/'
+    filename: 'js/[name]-[chunkhash:5].js',
+    publicPath: '/',
+    clean: true
   },
   devServer: {},
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public/index.html'),
-      favicon: path.resolve(__dirname, 'public/favicon.ico'),
-      title: 'Webpack React App'
-    })
+    // new HtmlWebpackPlugin({
+    //   template: path.resolve(__dirname, 'public/index.html'),
+    //   favicon: path.resolve(__dirname, 'public/favicon.ico'),
+    //   title: 'Webpack React App'
+    // })
   ],
   module: {
     rules: [
@@ -102,7 +102,6 @@ module.exports = (env) => {
         }
       }
     };
-    config.plugins.push(new CleanWebpackPlugin());
     config.plugins.push(
       new MiniCssExtractPlugin({
         filename: 'css/[name]-[hash:5].css',
