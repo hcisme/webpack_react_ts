@@ -8,14 +8,14 @@
     "strictNullChecks": true,
     "allowJs": true,
     "moduleResolution": "Node",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "@/*": [
         "./src/*"
       ]
     },
     "declaration": true,
-    "outDir": "./lib"
+    "outDir": "lib"
   },
   "include": [
     "./src",

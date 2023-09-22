@@ -1,14 +1,22 @@
 {
-  "name": "@hcisme/components",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "hcisme-components",
+  "version": "1.0.2",
+  "description": "DrawerForm, a component based on the secondary development of antd Drawer and antd Form",
+  "main": "lib/index.js",
+  "files": [
+    "README.md",
+    "package.json",
+    "dist",
+    "lib"
+  ],
   "scripts": {
     "start": "webpack serve --node-env=development",
     "dev": "webpack --node-env=development",
-    "build": "webpack --node-env=production"
+    "build": "webpack --node-env=production",
+    "ts-build": "tsc & npm run build"
   },
   "keywords": [
+    "react",
     "antd",
     "DrawerForm"
   ],
@@ -43,7 +51,12 @@
   },
   "dependencies": {
     "antd": "^5.9.2",
+    "hcisme-components": "^1.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }

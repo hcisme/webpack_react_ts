@@ -51,10 +51,14 @@ const Index: <T>(props: IProps<T>) => JSX.Element = (props) => {
   };
 
   const onOk = async () => {
+    if (!onFinish) {
+      setOpen(false);
+      return;
+    }
     try {
       const values = await form.validateFields();
       setSubmitLoading(true);
-      onFinish?.(values, setOpen, form).finally(() => {
+      onFinish(values, setOpen, form).finally(() => {
         setSubmitLoading(false);
       });
     } catch (error) {
