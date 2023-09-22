@@ -1,5 +1,5 @@
-import { createRoot } from 'react-dom/client';
-import { sum } from './utils';
+// import { createRoot } from 'react-dom/client';
+export { default as DrawerForm } from '@/components/DrawerForm';
 
-const root = createRoot(document.getElementById('app'));
-root.render(<h1>{sum(1, 2)}</h1>);
+// const root = createRoot(document.getElementById('app') as HTMLElement);
+// root.render(<Index />);
